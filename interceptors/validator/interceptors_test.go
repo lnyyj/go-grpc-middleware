@@ -8,8 +8,8 @@ import (
 	"io"
 	"testing"
 
-	"github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors/validator"
-	"github.com/grpc-ecosystem/go-grpc-middleware/v2/testing/testpb"
+	"github.com/lnyyj/go-grpc-middleware/interceptors/validator"
+	"github.com/lnyyj/go-grpc-middleware/testing/testpb"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"

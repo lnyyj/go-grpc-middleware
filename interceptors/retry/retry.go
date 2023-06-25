@@ -10,7 +10,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/grpc-ecosystem/go-grpc-middleware/v2/metadata"
+	"github.com/lnyyj/go-grpc-middleware/metadata"
 	"golang.org/x/net/trace"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"

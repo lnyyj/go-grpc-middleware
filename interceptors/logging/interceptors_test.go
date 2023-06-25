@@ -16,9 +16,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors"
-	"github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors/logging"
-	"github.com/grpc-ecosystem/go-grpc-middleware/v2/testing/testpb"
+	"github.com/lnyyj/go-grpc-middleware/interceptors"
+	"github.com/lnyyj/go-grpc-middleware/interceptors/logging"
+	"github.com/lnyyj/go-grpc-middleware/testing/testpb"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

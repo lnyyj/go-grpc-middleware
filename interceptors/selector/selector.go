@@ -6,7 +6,7 @@ package selector
 import (
 	"context"
 
-	"github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors"
+	"github.com/lnyyj/go-grpc-middleware/interceptors"
 	"google.golang.org/grpc"
 )
 

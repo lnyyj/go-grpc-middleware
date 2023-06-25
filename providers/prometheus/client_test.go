@@ -7,7 +7,7 @@ import (
 	"io"
 	"testing"
 
-	"github.com/grpc-ecosystem/go-grpc-middleware/v2/testing/testpb"
+	"github.com/lnyyj/go-grpc-middleware/testing/testpb"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 	"google.golang.org/grpc"

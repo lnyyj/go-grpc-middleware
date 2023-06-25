@@ -6,7 +6,7 @@ package auth
 import (
 	"context"
 
-	middleware "github.com/grpc-ecosystem/go-grpc-middleware/v2"
+	middleware "github.com/lnyyj/go-grpc-middleware"
 	"google.golang.org/grpc"
 )
 
@@ -21,7 +21,7 @@ import (
 // If error is returned, its `grpc.Code()` will be returned to the user as well as the verbatim message.
 // Please make sure you use `codes.Unauthenticated` (lacking auth) and `codes.PermissionDenied`
 // (authed, but lacking perms) appropriately.
-type AuthFunc func(ctx context.Context) (context.Context, error)
+type AuthFunc func(ctx context.Context, fullMethodName string) (context.Context, error)
 
 // ServiceAuthFuncOverride allows a given gRPC service implementation to override the global `AuthFunc`.
 //
@@ -40,7 +40,7 @@ func UnaryServerInterceptor(authFunc AuthFunc) grpc.UnaryServerInterceptor {
 		if overrideSrv, ok := info.Server.(ServiceAuthFuncOverride); ok {
 			newCtx, err = overrideSrv.AuthFuncOverride(ctx, info.FullMethod)
 		} else {
-			newCtx, err = authFunc(ctx)
+			newCtx, err = authFunc(ctx, info.FullMethod)
 		}
 		if err != nil {
 			return nil, err
@@ -58,7 +58,7 @@ func StreamServerInterceptor(authFunc AuthFunc) grpc.StreamServerInterceptor {
 		if overrideSrv, ok := srv.(ServiceAuthFuncOverride); ok {
 			newCtx, err = overrideSrv.AuthFuncOverride(stream.Context(), info.FullMethod)
 		} else {
-			newCtx, err = authFunc(stream.Context())
+			newCtx, err = authFunc(stream.Context(), info.FullMethod)
 		}
 		if err != nil {
 			return err

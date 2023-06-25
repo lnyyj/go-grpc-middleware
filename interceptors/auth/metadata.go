@@ -7,7 +7,7 @@ import (
 	"context"
 	"strings"
 
-	"github.com/grpc-ecosystem/go-grpc-middleware/v2/metadata"
+	"github.com/lnyyj/go-grpc-middleware/metadata"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

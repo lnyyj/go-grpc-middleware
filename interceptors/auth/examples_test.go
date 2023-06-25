@@ -7,9 +7,9 @@ import (
 	"context"
 	"log"
 
-	"github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors/auth"
-	"github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors/logging"
-	"github.com/grpc-ecosystem/go-grpc-middleware/v2/testing/testpb"
+	"github.com/lnyyj/go-grpc-middleware/interceptors/auth"
+	"github.com/lnyyj/go-grpc-middleware/interceptors/logging"
+	"github.com/lnyyj/go-grpc-middleware/testing/testpb"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
@@ -26,7 +26,7 @@ func userClaimFromToken(struct{}) string {
 }
 
 // exampleAuthFunc is used by a middleware to authenticate requests
-func exampleAuthFunc(ctx context.Context) (context.Context, error) {
+func exampleAuthFunc(ctx context.Context, fullMethodName string) (context.Context, error) {
 	token, err := auth.AuthFromMD(ctx, "bearer")
 	if err != nil {
 		return nil, err

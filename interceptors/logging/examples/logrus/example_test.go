@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors/logging"
+	"github.com/lnyyj/go-grpc-middleware/interceptors/logging"
 	"github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
 )

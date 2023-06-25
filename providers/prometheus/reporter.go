@@ -7,7 +7,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors"
+	"github.com/lnyyj/go-grpc-middleware/interceptors"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

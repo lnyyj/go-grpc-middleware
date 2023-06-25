@@ -7,7 +7,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors"
+	"github.com/lnyyj/go-grpc-middleware/interceptors"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 	"google.golang.org/grpc"
