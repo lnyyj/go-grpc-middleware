@@ -103,7 +103,7 @@ go get github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus
 * Chain interceptors was removed, because `grpc` implemented one.
 * Moved to the new proto API (google.golang.org/protobuf).
 * All "deciders", so functions that decide what to do based on gRPC service name and method (aka "fullMethodName") are removed (!). Use [`github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors/selector`](interceptors/selector) interceptor to select what method, type or service should use what interceptor.
-* No more snake case package names. We have now single word meaningful package names. If you have collision in package names we recommend adding grpc prefix e.g. `grpcprom "github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus"`.
+* No more snake case package names. We have now single word meaningful package names. If you have collision in package names we recommend adding grpc prefix e.g. `grpcprom "github.com/lnyyj/go-grpc-middleware/providers/prometheus"`.
 * All the options (if any) are in the form of `<package_name>.With<Option Name>`, with extensibility to add more of them.
 * `v2` is the main (default) development branch.
 

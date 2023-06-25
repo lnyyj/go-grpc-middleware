@@ -14,12 +14,12 @@ import (
 
 	"github.com/go-kit/log"
 	"github.com/go-kit/log/level"
-	grpcprom "github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus"
 	"github.com/lnyyj/go-grpc-middleware/interceptors"
 	"github.com/lnyyj/go-grpc-middleware/interceptors/auth"
 	"github.com/lnyyj/go-grpc-middleware/interceptors/logging"
 	"github.com/lnyyj/go-grpc-middleware/interceptors/recovery"
 	"github.com/lnyyj/go-grpc-middleware/interceptors/selector"
+	grpcprom "github.com/lnyyj/go-grpc-middleware/providers/prometheus"
 	"github.com/lnyyj/go-grpc-middleware/testing/testpb"
 	"github.com/oklog/run"
 	"github.com/prometheus/client_golang/prometheus"
